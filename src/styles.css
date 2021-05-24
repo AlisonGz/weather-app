@@ -210,3 +210,17 @@ i {
 .temperature2 {
   font-size: 20px;
 }
+
+/*Footer*/
+
+.footer {
+  text-align: right;
+  font-family: monospace;
+  text-transform: lowercase;
+  font-style: italic;
+  font-size: 10px;
+}
+
+.GithubLink {
+  text-decoration: none;
+}
