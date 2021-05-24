@@ -152,16 +152,16 @@ h1 {
 
 .currentdate {
   font-style: italic;
-  font-size: 3vmin;
+  font-size: 2.5vmin;
 }
 
 .description {
-  font-size: 2vmin;
+  font-size: 2.5vmin;
 }
 
 .humidity,
 .wind {
-  font-size: 1.5vmin;
+  font-size: 1.8vmin;
 }
 
 .icon1:hover,
@@ -174,6 +174,12 @@ h1 {
 .unitValue:hover,
 .description:hover {
   color: #4451c7;
+}
+
+.celsius,
+.separation,
+.fahrenheit {
+  font-size: 1.8vmin;
 }
 
 .celsius:hover,
@@ -222,7 +228,6 @@ i {
 .footer {
   text-align: right;
   font-family: monospace;
-  text-transform: lowercase;
   font-style: italic;
   font-size: 10px;
 }
