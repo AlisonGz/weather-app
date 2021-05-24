@@ -19,7 +19,7 @@ body {
 .background {
   background: #ffa2d0;
   margin: 20px auto auto auto;
-  max-width: 400;
+  max-width: 100% !important;
   display: block;
   border: 5px solid turquoise;
   padding: 20px;
@@ -58,7 +58,7 @@ h1 {
     0px 16px #f9a825, 0px 18px #ff5722;
   font-family: ArialRounded;
   text-align: center;
-  font-size: 40px;
+  font-size: 4vmin;
   padding: 10px 50px 20px 50px;
   text-transform: uppercase;
 }
@@ -146,17 +146,22 @@ h1 {
 }
 
 .city {
-  font-size: 50px;
+  font-size: 4vmin;
   font-weight: normal;
 }
 
 .currentdate {
   font-style: italic;
+  font-size: 3vmin;
+}
+
+.description {
+  font-size: 2vmin;
 }
 
 .humidity,
 .wind {
-  font-size: 18px;
+  font-size: 1.5vmin;
 }
 
 .icon1:hover,
@@ -166,7 +171,8 @@ h1 {
 .humidity:hover,
 .wind:hover,
 .separation:hover,
-.unitValue:hover {
+.unitValue:hover,
+.description:hover {
   color: #4451c7;
 }
 
@@ -178,7 +184,7 @@ h1 {
 
 .temperature,
 .unitValue {
-  font-size: 35px;
+  font-size: 3vmin;
 }
 
 /* Forecast */
