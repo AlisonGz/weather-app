@@ -154,7 +154,7 @@ h1 {
   font-style: italic;
 }
 
-.precipitations,
+.humidity,
 .wind {
   font-size: 18px;
 }
@@ -163,7 +163,7 @@ h1 {
 .city:hover,
 .currentdate:hover,
 .temperature:hover,
-.precipitations:hover,
+.humidity:hover,
 .wind:hover,
 .separation:hover,
 .unitValue:hover {
