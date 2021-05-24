@@ -26,27 +26,7 @@ let city = document.querySelector("#city");
 let humidity = document.querySelector("#humidity-value");
 let wind = document.querySelector("#wind-value");
 
-// get real time temperature in C - tbc
-
-function currentCity(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(function updateTemperature(response) {
-    let temperature = Math.round(response.data.main.temp);
-    currentTemperature.innerHTML = `${temperature}`;
-    let cityName = response.data.name;
-    city.innerHTML = cityName;
-    let humidityValue = response.data.main.humidity;
-    humidity.innerHTML = humidityValue;
-    let windValue = Math.round(response.data.wind.speed);
-    wind.innerHTML = windValue;
-  });
-}
-
-city.innerHTML = navigator.geolocation.getCurrentPosition(currentCity);
-
-// display city search - OK
+// display city search
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
