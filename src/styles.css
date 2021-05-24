@@ -65,6 +65,15 @@ h1 {
 
 /* Form */
 
+.searchBar {
+  border-radius: 6px;
+  border: solid 1px turquoise;
+  padding: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  width: 50%;
+}
+
 .submit {
   transition: 200ms all ease-in-out;
   background: turquoise;
@@ -142,18 +151,22 @@ h1 {
 }
 
 .city {
-  font-size: 3vmin;
+  font-size: 25px;
   font-weight: normal;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 
 .currentdate,
 .dateUpdate {
-  font-style: italic;
-  font-size: 1.5vmin;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
 }
 
 .description {
-  font-size: 2vmin;
+  font-size: 12px;
 }
 
 .description:first-letter {
@@ -162,7 +175,7 @@ h1 {
 
 .humidity,
 .wind {
-  font-size: 1.5vmin;
+  font-size: 12px;
 }
 
 .dateUpdate:hover,
@@ -180,7 +193,7 @@ h1 {
 .celsius,
 .separation,
 .fahrenheit {
-  font-size: 1.8vmin;
+  font-size: 12px;
 }
 
 .celsius:hover,
@@ -191,7 +204,7 @@ h1 {
 
 .temperature,
 .unitValue {
-  font-size: 3vmin;
+  font-size: 25px;
 }
 
 /* Forecast */
