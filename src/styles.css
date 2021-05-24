@@ -19,7 +19,7 @@ body {
 .background {
   background: #ffa2d0;
   margin: 20px auto auto auto;
-  max-width: 100% !important;
+  max-width: 600px;
   display: block;
   border: 5px solid turquoise;
   padding: 20px;
@@ -64,10 +64,6 @@ h1 {
 }
 
 /* Form */
-
-.location {
-  border-radius: 10px;
-}
 
 .submit {
   transition: 200ms all ease-in-out;
@@ -150,18 +146,23 @@ h1 {
   font-weight: normal;
 }
 
-.currentdate {
+.currentdate,
+.dateUpdate {
   font-style: italic;
-  font-size: 2.5vmin;
+  font-size: 1.5vmin;
 }
 
 .description {
-  font-size: 2.5vmin;
+  font-size: 2vmin;
+}
+
+.description:first-letter {
+  text-transform: capitalize;
 }
 
 .humidity,
 .wind {
-  font-size: 1.8vmin;
+  font-size: 1.5vmin;
 }
 
 .icon1:hover,

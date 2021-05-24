@@ -34,6 +34,7 @@
             type="search"
             name="location"
             id="location-input"
+            class="searchBar"
             placeholder="Enter a city"
           />
           <input type="submit" value="Search" class="submit" id="submit" />
@@ -47,7 +48,7 @@
                 <div class="row">
                   <div class="col-4">
                     <h5 class="card-title">
-                      <span class="city" id="city">Paris</span><br /><span
+                      <span class="city" id="city">Paris</span><br /><span class="dateUpdate">Last updated: </span><span
                         class="currentdate"
                         id="current-date"
                         >Wednesday, 15:08</span
@@ -55,14 +56,16 @@
                     </h5>
                   </div>
                   <div class="col-4">
-                    <p class="card-text"><span class="temperature" id="temperature"></span><span class="unitValue">°C</span><br /> <link href="#"><span id="celsius" class="celsius">C</span></link> <span class="separation">|</span> <link href="#"><span class="fahrenheit" id="fahrenheit">F</span></link></p>
-                  </div>
-                  <div class="col-4">
-                    <p class="card-text additional">
-                        <i class="fas fa-cloud-rain icon1"></i>
+                      <i class="fas fa-cloud-rain icon1"></i>
+                      <br />
                       <div class="description" id="description">
                         Raining
                         </div>
+                  </div>
+                  <div class="col-4">
+                    <p class="card-text additional">
+                        <span class="card-text">
+                        <span class="temperature" id="temperature"></span><span class="unitValue">°C</span><br /> <link href="#"><span id="celsius" class="celsius">C</span></link> <span class="separation">|</span> <link href="#"><span class="fahrenheit" id="fahrenheit">F</span></link></p>
                         <div class="humidity">
                         Humidity: <span id="humidity-value">70</span>%
                         </div>
