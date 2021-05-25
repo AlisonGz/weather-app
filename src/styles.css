@@ -194,6 +194,12 @@ h1 {
 .separation,
 .fahrenheit {
   font-size: 12px;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none !important;
+  color: white !important;
 }
 
 .celsius:hover,
@@ -248,4 +254,5 @@ i {
 
 .GithubLink {
   text-decoration: none;
+  color: #2196f3 !important;
 }
