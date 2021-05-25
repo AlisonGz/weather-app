@@ -42,9 +42,10 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
-let celsiusTemperature = null;
-
 function displayWeatherCondition(response) {
+  celsiusTemperature = response.data.main.temp;
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -68,13 +69,14 @@ function displayWeatherCondition(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
-  celsiusTemperature = reponse.data.main.temp;
 }
 
 function searchCity(cityInput) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
+
+searchCity("Zürich");
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -85,6 +87,8 @@ function handleSubmit(event) {
 function showFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
@@ -92,8 +96,12 @@ function showFahrenheit(event) {
 function showCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   temperatureElement = Math.round(celsiusTemperature);
 }
+
+let celsiusTemperature = null;
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
@@ -103,8 +111,6 @@ fahrenheitLink.addEventListener("click", showFahrenheit);
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
-
-searchCity("Zürich");
 
 // Use current button
 
