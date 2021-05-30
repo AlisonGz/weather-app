@@ -1,14 +1,3 @@
-// update the current date and time
-
-//let now = new Date();
-
-//let currentDay = days[now.getDay()];
-//let hours = now.getHours();
-//let minutes = now.getMinutes();
-
-//let currentDate = document.querySelector("#current-date");
-//currentDate.innerHTML = `${currentDay}, ${hours}:${minutes}`;
-
 // library
 
 let currentTemperature = document.querySelector(".temperature");
@@ -42,6 +31,59 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function convertTimestamp(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `
+  <div class="row">
+  `;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="col-2">
+        <h5 class="weather-forecast-date">${convertTimestamp(
+          forecastDay.dt
+        )}</h5>
+        <img src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png" alt="" id="icon" width=42/>
+        <div class="weather-forecast-temperature">        
+          <span class="weather-forecast-temperature-max">${Math.round(
+            forecastDay.temp.max
+          )}° </span>
+          <span class="weather-forecast-temperature-min">${Math.round(
+            forecastDay.temp.min
+          )}°</span>
+        </div>
+      </div>
+`;
+    }
+  });
+
+  forecastHTML =
+    forecastHTML +
+    `
+  </div>
+  `;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeatherCondition(response) {
   celsiusTemperature = response.data.main.temp;
   celsiusLink.classList.add("active");
@@ -69,6 +111,8 @@ function displayWeatherCondition(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(cityInput) {
