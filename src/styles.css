@@ -223,17 +223,19 @@ a {
 
 /* Forecast */
 
-.forecasts {
-  text-align: center;
-  color: #4451c7;
+.weather-forecast-date {
+  font-size: 15px;
 }
 
-.forecast1:hover,
-.forecast2:hover,
-.forecast3:hover,
-.forecast4:hover,
-.forecast5:hover {
-  color: purple;
+.card-body {
+  margin: 12px;
+}
+
+.weather-forecast {
+  margin-top: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: white;
 }
 
 h2 {
@@ -247,8 +249,12 @@ i {
   font-size: 40px;
 }
 
-.temperature2 {
-  font-size: 20px;
+.weather-forecast-temperature {
+  font-size: 12px;
+}
+
+.weather-forecast-temperature-max {
+  font-weight: bold;
 }
 
 /*Footer*/
